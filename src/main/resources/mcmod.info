@@ -1,18 +1,18 @@
 [
   {
-    "modid": "geolosyshax",
-    "name": "GeolosysHax",
-    "description": "Finds geolosys ore veins for you automatically",
-    "url": "https://github.com/TheAirBlow/GeolosysHax",
-    "version": "2.1.0",
+    "modid": "goobercord",
+    "name": "GooberCord",
+    "description": "Client-side Discord integration for Minecraft",
+    "url": "https://git.sussy.dev/GooberSoft/GooberCord/-/tree/client",
+    "version": "1.0.0",
     "mcversion": "1.12.2",
     "updateUrl": "",
     "authorList": [
       "TheAirBlow"
     ],
     "credits": "",
-    "logoFile": "assets/geolosyshax/logo.png",
+    "logoFile": "assets/goobercord/logo.png",
     "screenshots": [],
-    "dependencies": ["geolosys"]
+    "dependencies": [""]
   }
 ]
