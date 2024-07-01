@@ -6,27 +6,27 @@ Discord bot and REST API server
 2) Compile project with .NET 8 SDK
 3) Start server and wait for it to crash
 4) Open `config.json` and edit it:
-```json5
+```json
 {
-  // Symmetric key for JWT signing
+  "_AuthSecret": "Symmetric key for JWT signing",
   "AuthSecret": "[REDACTED]",
-  // Various customization options
+  "_Customization": "Various customization options",
   "Customization": {
-    // Format for a global chat message
+    "_GlobalMessage": "Format for a global chat message",
     "GlobalMessage": "*{0}*: {1}",
-    // Format for a local chat message
+    "_LocalMessage": "Format for a local chat message",
     "LocalMessage": "<:zpmvibrator:1171802059343921173> *{0}*: {1}",
-    // Notification sent when a new proxy player is assigned
+    "_AssignedProxy": "Notification sent when a new proxy player is assigned",
     "AssignedProxy": "<:obama:1138432261411324025> *{0}* is now proxying chat",
-    // Notification sent on failure to assign a new proxy player
+    "_NoProxy": "Notification sent on failure to assign a new proxy player",
     "NoProxy": "<:TrollShrug:1256731287310569563> No players left to proxy chat"
   },
-  // Discord bot configuration
+  "_Bot": "Discord bot configuration",
   "Bot": {
-    // Bot authentication token
+    "_Token": "Bot authentication token",
     "Token": "change_me",
-    // Guild to register slash commands in
-    // Set to null to register them globally
+    "_Guild1": "Guild to register slash commands in",
+    "_Guild2": "Set to null to register them globally",
     "Guild": null
   }
 }
