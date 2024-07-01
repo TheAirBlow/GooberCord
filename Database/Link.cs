@@ -80,6 +80,9 @@ public class Link {
         var link = await Controller.Links.QueryFirst(
             x => x.ExpireAt > DateTime.UtcNow && x.Code == code);
         if (link == null) return false;
+        var existing = await Controller.Links.QueryFirst(
+            x => x.ExpireAt == null && x.UserId == link.UserId && x.GuildId == link.GuildId && x.Uuid == uuid);
+        if (existing != null) return false;
         await link.Update(x => x.ExpireAt, null);
         await link.Update(x => x.Uuid, uuid);
         return true;

@@ -44,10 +44,12 @@ You can use it by [downloading the mod](https://example.com/) and [inviting the 
 
 ## Commands
 1) `/link` - Gives a code for linking your Minecraft account to Discord
-2) `/regex <channel> <regex>` - Changes chat message regex for relay channel
-3) `/server <channel> <server>` - Changes server IP for relay channel
-4) `/create <channel> <server>` - Creates a new relay channel
-5) `/delete <channel>` - Deletes a relay channel
+2) `/unlink` - Unlinks a Minecraft account from your account
+3) `/links` - Lists all used linking codes from all guilds
+4) `/regex <channel> <regex>` - Changes chat message regex for relay channel
+5) `/server <channel> <server>` - Changes server IP for relay channel
+6) `/create <channel> <server>` - Creates a new relay channel
+7) `/delete <channel>` - Deletes a relay channel
 
 ## Development
 Swagger docs are accessible at `/swagger/index.html`
