@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'net.theairblow'
-version = '2.1.0'
+version = '1.0.0'
 
 java {
     archivesBaseName = 'goobercord'
@@ -73,7 +73,8 @@ jar {
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "TheAirBlow",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "Multi-Release"           : "true"
         ])
     }
 }
@@ -82,6 +83,7 @@ shadowJar {
     archiveClassifier = ''
     configurations = [project.configurations.shade]
     relocate 'org.java_websocket', "${project.group}.shadow.org.java_websocket"
+    relocate 'org.slf4j', "${project.group}.shadow.org.slf4j"
     finalizedBy 'reobfShadowJar'
 }
 

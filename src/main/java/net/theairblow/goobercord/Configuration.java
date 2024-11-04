@@ -8,7 +8,7 @@ public class Configuration {
     @Config.Name("Server URL")
     public static String server = "https://gc.sussy.dev/";
 
-    @Config.Comment("Global chat prefix")
-    @Config.Name("Global Prefix")
-    public static String prefix = "!";
+    @Config.Comment("Discord message prefix")
+    @Config.Name("Local Prefix")
+    public static String prefix = "~";
 }

@@ -2,6 +2,8 @@ package net.theairblow.goobercord.handlers;
 
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ClientChatEvent;
+import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.theairblow.goobercord.Configuration;
@@ -21,7 +23,8 @@ public class Commands {
             GooberCord.send("§cGooberCord commands:\n" +
                 "§2!gc link [code] - §3Links Minecraft account to Discord\n" +
                 "§2!gc unlink [code] - §3Unlinks Minecraft account from Discord\n" +
-                "§2!gc links - §3Lists all linked Discord accounts/guilds\n\n" +
+                "§2!gc links - §3Lists all linked Discord accounts/guilds\n" +
+                "§2!gc prefix [char] - §3Changes global chat prefix\n\n" +
                 "§6Current global chat prefix: §r'%s'", Configuration.prefix);
             return;
         }
@@ -64,8 +67,19 @@ public class Commands {
 
                 GooberCord.send("§c====== §2Linked Accounts§c ======");
                 for (GooberAPI.Link link : links)
-                    GooberCord.send("§3-> §a'%s'\n  §3^ §aUser: %s, guild: %s",
+                    GooberCord.send("§3-> §a'%s'\n §3^ §aUser: %s, guild: %s",
                         link.code, link.userId, link.guildId);
+                break;
+            }
+            case "prefix": {
+                if (args.length < 3) {
+                    GooberCord.sendPrefix("§6Usage: §c!gc prefix [char]");
+                    return;
+                }
+
+                Configuration.prefix = args[2];
+                GooberCord.sendPrefix("§2Successfully changed chat prefix to §r'%s'", args[2]);
+                ConfigManager.sync(GooberCord.MOD_ID, Config.Type.INSTANCE);
                 break;
             }
             default:

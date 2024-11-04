@@ -70,6 +70,10 @@ public class GooberAPI {
         }
     }
 
+    public static boolean isAuthorized() {
+        return token != null;
+    }
+
     public static String getToken() {
         return token;
     }
